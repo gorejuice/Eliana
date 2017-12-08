@@ -8,12 +8,10 @@
 """
 import os
 from tests.eliana_test import ElianaUnitTest
+# from tests.unit_test_runner import TesterSub
 
-from PIL import Image
 from eliana.lib.texture import Texture
 from eliana.lib.eliana_image import ElianaImage
-
-import traceback
 
 
 class TextureUnitTest(ElianaUnitTest):
@@ -49,7 +47,8 @@ class TextureUnitTest(ElianaUnitTest):
 
         for path in self.__test_images:
 
-            texture = Texture(path)
+            # texture = Texture(path)
+            texture = Texture(ElianaImage(path=path))
 
             # img_gray = texture.img_gray
 
@@ -77,5 +76,5 @@ class TextureUnitTest(ElianaUnitTest):
         self.test(self.__batch_get_texture)
 
 
-texture_unit_test = TextureUnitTest()
-texture_unit_test.run()
+if __name__ == '__main__':
+    TextureUnitTest().run()

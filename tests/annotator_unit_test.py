@@ -136,6 +136,5 @@ class AnnotatorUnitTest(ElianaUnitTest):
             print(self.eliana_log.log_ok)
 
 
-annotator_unit_test = AnnotatorUnitTest()
-annotator_unit_test.run()
-input('Press any key to exit...')
+if __name__ == '__main__':
+    AnnotatorUnitTest().run()

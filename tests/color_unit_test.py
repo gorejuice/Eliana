@@ -9,11 +9,8 @@
 import os
 from tests.eliana_test import ElianaUnitTest
 
-import tensorflow as tf
 from eliana.lib.color import Color
 from eliana.lib.eliana_image import ElianaImage
-
-import traceback
 
 
 class ColorUnitTest(ElianaUnitTest):
@@ -86,5 +83,5 @@ class ColorUnitTest(ElianaUnitTest):
         self.test(self.__batch_colorfulness)
 
 
-color_unit_test = ColorUnitTest()
-color_unit_test.run()
+if __name__ == '__main__':
+    ColorUnitTest().run()
