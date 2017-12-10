@@ -24,11 +24,14 @@ class ImageBatchLoaderUnitTest(ElianaUnitTest):
             'data',
             'test_images'
         )
-        self.__images = ImageBatchLoader(self.__dir_test_images).images
+        self.__images = ImageBatchLoader(
+            self.__dir_test_images, limit=2
+        ).images
 
     def __print_some_of_test_images(self):
-        for (path, img) in self.__images:
-            print(path, img, sep='\n', end='\n\n')
+
+        for img in self.__images:
+            print(img.path, img, sep='\n', end='\n\n')
 
     def run(self):
 
